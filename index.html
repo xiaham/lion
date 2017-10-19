@@ -25,20 +25,8 @@
 	<script>
 	setInterval(attachlion,1000);
 	
-	@function attachlion(){
-		var t = document.createElement("div");
-		t.setAttribute("class","lion"); 
-		t.style.position = "absolute"; 
-		t.style.top = randomBH(0,window.innerHeight) + "px";
-		t.style.left = randomBH(0,window.innerWidth) + "px";
-
-		
-		t.addEventListener("animationend",remove);
-		
-
-		document.body.appendChild(t);		
-	}
-	@function attachlion(){
+	
+	function attachlion(){
 		var t = document.createElement("div");
 		t.setAttribute("class","lion"); 
 		t.style.position = "absolute"; 
