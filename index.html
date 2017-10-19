@@ -22,7 +22,8 @@
 <body>
 	
 
-<script>
+	<script>
+	setInterval(attachlion,1000);
 	
 	function attachlion(){
 		var t = document.createElement("div");
@@ -30,10 +31,19 @@
 		t.style.position = "absolute"; 
 		t.style.top = randomBH(0,window.innerHeight) + "px";
 		t.style.left = randomBH(0,window.innerWidth) + "px";
+
+		
+		t.addEventListener("animationend",remove);
+		
+
 		document.body.appendChild(t);		
 	}
 	
-	attachBalloon();
+	
+	function remove(){
+		var t = event.target; 
+		t.parentNode.removeChild(t);
+	}
 
 	
 	function randomBH(min, max) {
@@ -42,7 +52,6 @@
   		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 	</script>
-	
 	
 	
 </body>
