@@ -21,11 +21,28 @@
 </head>
 <body>
 	
-	<script>
-		var t = document.createElement("div"); 
-		t.setAttribute("class","lion"); 
-		document.body.appendChild(t); 
+
+		<script>
+	var t = document.createElement("div");
+	t.setAttribute("class","balloon"); 
+
+	t.style.position = "absolute"; 
+	console.log(window.innerHeight, window.innerWidth);
+	
+	t.style.top = randomBH(0,window.innerHeight) + "px";
+	t.style.left = randomBH(0,window.innerWidth) + "px";
+
+	document.body.appendChild(t); 
+	
+	
+	function randomBH(min, max) {
+  		min = Math.ceil(min);
+  		max = Math.floor(max);
+  		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
 	</script>
-
-
+	
+	
+	
+	
 </body>
