@@ -5,12 +5,11 @@
 	<style>
 		.lion{
 			width:350px; height:350px;
-			
+			//background:url('lion_1.png');
+			//background-size:150px;
 			background-repeat:no-repeat;
 			animation: bMove 4s linear;
 		}
-
-
 		@keyframes bMove{
 			0%{ background-position: 125 600px; opacity:0;}
 			20%{opacity:1;}
@@ -20,12 +19,21 @@
 </head>
 <body>
 	
-
 	<script>
 	setInterval(attachlion,1000);
 	
-	
-	function attachlion(){
+	@function attachlion(){
+		var t = document.createElement("div");
+		t.setAttribute("class","lion"); 
+		t.style.position = "absolute"; 
+		t.style.top = randomBH(0,window.innerHeight) + "px";
+		t.style.left = randomBH(0,window.innerWidth) + "px";
+		
+		t.addEventListener("animationend",remove);
+		
+		document.body.appendChild(t);		
+	}
+	@function attachlion(){
 		var t = document.createElement("div");
 		t.setAttribute("class","lion"); 
 		t.style.position = "absolute"; 
@@ -51,7 +59,6 @@
 		var t = event.target; 
 		t.parentNode.removeChild(t);
 	}
-
 	
 	function randomBH(min, max) {
   		min = Math.ceil(min);
